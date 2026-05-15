@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-premium-black: #1A1A1A;
+  --color-premium-white: #FDFDFD;
+  --color-premium-gray: rgba(26, 26, 26, 0.4);
+  --color-premium-border: rgba(0, 0, 0, 0.05);
+  --color-premium-bg-alt: #F5F5F5;
+}
+
+
+@layer base {
+  :root {
+    --premium-black: #1A1A1A;
+    --premium-white: #FDFDFD;
+    --premium-gray: rgba(26, 26, 26, 0.4);
+    --premium-border: rgba(0, 0, 0, 0.05);
+    --premium-bg-alt: #F5F5F5;
+    --cursor-color: #1a1a1a;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+
+  body {
+    @apply antialiased selection:bg-premium-black selection:text-premium-white;
+    background-color: var(--premium-white);
+    color: var(--premium-black);
+    overflow-x: hidden;
+    transition: background-color 0.8s cubic-bezier(0.76, 0, 0.24, 1), color 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif italic tracking-tight;
+    color: var(--premium-black);
+    transition: color 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  p, span, li, a, button {
+    transition: color 0.8s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.8s cubic-bezier(0.76, 0, 0.24, 1), border-color 0.8s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .editorial-serif {
+    @apply font-serif italic;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-[10px] uppercase tracking-[0.3em] font-bold;
+    color: var(--premium-gray);
+    writing-mode: vertical-lr;
+  }
+
+  .nav-link {
+    @apply text-[11px] font-medium uppercase tracking-widest hover:opacity-50 transition-all duration-300;
+    color: var(--premium-black);
+  }
+
+  .premium-card {
+    background-color: var(--premium-bg-alt);
+    border-color: var(--premium-border);
+  }
+}
+
+/* Custom Cursor Styles */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--premium-black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--premium-black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+  backdrop-filter: blur(1px);
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+  html {
+    cursor: auto;
+  }
+  .cursor-dot, .cursor-outline {
+    display: none;
+  }
+}
