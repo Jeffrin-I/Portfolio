@@ -9,7 +9,7 @@ const skills = [
   { name: "AI/ML", percentage: 75 },
 ];
 
-function SkillBar({ name, percentage }: { name: string; percentage: number }) {
+function SkillBar({ name, percentage }: { name: string; percentage: number; key?: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

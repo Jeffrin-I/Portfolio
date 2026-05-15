@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Instagram, ArrowDown } from 'lucide-react';
+import profileImg from '../../assets/profile.jpg';
 
 export default function Hero() {
   const containerVariants = {
@@ -56,14 +57,13 @@ export default function Hero() {
           AIML Student @ Saveetha Engineering College
         </motion.p>
 
-        <motion.div variants={itemVariants} className="relative inline-block mb-16">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-premium-border p-1">
-            <div className="w-full h-full rounded-full bg-premium-bg-alt grayscale contrast-125 overflow-hidden transition-all duration-700">
+        <motion.div variants={itemVariants} className="relative inline-block mb-16 group">
+          <div className="w-44 h-44 md:w-64 md:h-64 rounded-full border border-premium-border p-1">
+            <div className="w-full h-full rounded-full bg-premium-bg-alt overflow-hidden grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
                <img 
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200" 
+                src={profileImg} 
                 alt="Jeffrin I"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                />
             </div>
           </div>
