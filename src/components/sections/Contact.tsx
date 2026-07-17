@@ -23,7 +23,7 @@ export default function Contact() {
               </div>
               <span className="text-lg md:text-xl font-medium">jeffrinmich@gmail.com</span>
             </a>
-            <a href="tel:" className="flex items-center gap-6 group interactive">
+        
               <div className="w-12 h-12 border border-premium-border rounded-full flex items-center justify-center group-hover:bg-premium-black group-hover:text-white transition-all duration-300">
                 <Phone size={20} />
               </div>
